@@ -4,11 +4,11 @@ import styles from "./Heading.module.scss";
 
 type HeadingElement = "h1" | "h2" | "h3";
 
-export interface HeadingProps {
+export type HeadingProps = PropsWithChildren<{
   as: HeadingElement;
-}
+}>;
 
-export const Heading = ({ children, as }: PropsWithChildren<HeadingProps>) => {
+export const Heading = ({ children, as }: HeadingProps) => {
   const Element = as;
   return (
     <Element

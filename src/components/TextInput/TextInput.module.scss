@@ -9,9 +9,11 @@
   background-color: $color-lighthouse;
   border: 0;
   border-radius: 16px;
-  padding: 20px 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 48px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
   color: $color-carbon-fiber;
   border: 1px solid transparent;
@@ -33,7 +35,7 @@
 
 .searchIcon {
   position: absolute;
-  top: 24px;
+  top: 16px;
   right: 24px;
   color: $color-purple;
 }

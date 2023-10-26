@@ -1,9 +1,14 @@
 @import "~normalize.css";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
 
+ul,
 p,
 h1,
 h2,
@@ -13,4 +18,9 @@ h5,
 h6 {
   margin-block-start: 0;
   margin-block-end: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
 }
