@@ -1,0 +1,20 @@
+@use "../../../../colors.scss" as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon {
+  margin-bottom: 44px;
+}
+
+.heading {
+  margin-bottom: 24px;
+}
+
+.hint {
+  text-align: center;
+  color: $color-sonic-silver;
+}

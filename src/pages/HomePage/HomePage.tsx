@@ -6,12 +6,13 @@ import { AppLayout } from "../../layouts/AppLayout/AppLayout";
 import styles from "./HomePage.module.scss";
 import { DefinitionsList } from "./components/DefinitionsList/DefinitionsList";
 import { Header } from "./components/Header/Header";
+import { NotFound } from "./components/NotFound/NotFound";
 import { PartOfSpeechHint } from "./components/PartOfSpeechHint/PartOfSpeechHint";
 import { SourceUrlsList } from "./components/SourceUrlsList/SourceUrlsList";
 import { SynonymsList } from "./components/SynonymsList/SynonymsList";
 
 export const HomePage = () => {
-  const { wordDefinition, setSearchTerm, isLoading } =
+  const { wordDefinition, setSearchTerm, isLoading, isNotFoundError } =
     useGetDebouncedWordDefinition();
 
   return (
@@ -21,6 +22,7 @@ export const HomePage = () => {
         className={styles.searchInput}
       />
       <LoadableContent isLoading={isLoading}>
+        {isNotFoundError && <NotFound />}
         {wordDefinition && (
           <>
             <Header

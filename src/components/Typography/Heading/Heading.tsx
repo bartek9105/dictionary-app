@@ -6,9 +6,10 @@ type HeadingElement = "h1" | "h2" | "h3";
 
 export type HeadingProps = PropsWithChildren<{
   as: HeadingElement;
+  className?: string;
 }>;
 
-export const Heading = ({ children, as }: HeadingProps) => {
+export const Heading = ({ children, as, className }: HeadingProps) => {
   const Element = as;
   return (
     <Element
@@ -18,7 +19,8 @@ export const Heading = ({ children, as }: HeadingProps) => {
           [styles.headingLevel1]: as === "h1",
           [styles.headingLevel3]: as === "h2",
           [styles.headingLevel2]: as === "h3",
-        })
+        },
+        className)
       )}
     >
       {children}
