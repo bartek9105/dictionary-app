@@ -1,15 +1,21 @@
 @use "../../../../colors.scss" as *;
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .word {
   color: $color-carbon-fiber;
   font-size: 32px;
   font-weight: 700;
 }
 
-.header {
+.text {
   display: grid;
+  align-items: center;
   row-gap: 8px;
-  margin-bottom: 30px;
 }
 
 .phonetic {

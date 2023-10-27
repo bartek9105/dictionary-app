@@ -1,3 +1,4 @@
+import useSound from "use-sound";
 import { FormInput } from "../../components/FormInput/FormInput";
 import { Line } from "../../components/Line/Line";
 import { LoadableContent } from "../../components/LoadableContent/LoadableContent";
@@ -15,6 +16,8 @@ export const HomePage = () => {
   const { wordDefinition, setSearchTerm, isLoading, isNotFoundError } =
     useGetDebouncedWordDefinition();
 
+  const audio = wordDefinition?.phonetics?.find(({ audio }) => audio)?.audio;
+
   return (
     <AppLayout>
       <FormInput
@@ -25,10 +28,13 @@ export const HomePage = () => {
         {isNotFoundError && <NotFound />}
         {wordDefinition && (
           <>
-            <Header
-              word={wordDefinition.word}
-              phonetic={wordDefinition.phonetic}
-            />
+            <div className={styles.header}>
+              <Header
+                word={wordDefinition.word}
+                phonetic={wordDefinition.phonetic}
+                audio={audio}
+              />
+            </div>
             <div className={styles.content}>
               {wordDefinition.meanings.map(
                 ({ partOfSpeech, definitions, synonyms }) => (
