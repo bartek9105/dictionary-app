@@ -1,0 +1,17 @@
+@use "../../../../colors.scss" as *;
+
+.word {
+  color: $color-carbon-fiber;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header {
+  display: grid;
+  row-gap: 8px;
+  margin-bottom: 30px;
+}
+
+.phonetic {
+  color: $color-purple;
+}

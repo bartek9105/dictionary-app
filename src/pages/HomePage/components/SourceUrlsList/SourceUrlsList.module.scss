@@ -1,0 +1,16 @@
+@use "../../../../colors.scss" as *;
+
+.container {
+  margin-top: 24px;
+}
+
+.hint {
+  color: $color-sonic-silver;
+  text-decoration: underline;
+  margin-bottom: 8px;
+}
+
+.link {
+  color: $color-carbon-fiber;
+  text-decoration: underline;
+}

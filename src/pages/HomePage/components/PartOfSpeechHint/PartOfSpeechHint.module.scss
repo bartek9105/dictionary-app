@@ -1,0 +1,15 @@
+@use "../../../../colors.scss" as *;
+
+.container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.hint {
+  font-size: 18px;
+  font-weight: 700;
+  color: $color-carbon-fiber;
+  font-style: italic;
+}

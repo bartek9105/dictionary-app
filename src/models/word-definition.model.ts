@@ -12,7 +12,7 @@ interface Phonetic {
   audio?: string;
 }
 
-interface Meaning {
+export interface Meaning {
   partOfSpeech: string;
   definitions: Definition[];
   synonyms: string[];

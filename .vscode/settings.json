@@ -1,0 +1,7 @@
+{
+  "reactComponentGenerator.useIndexFile": false,
+  "reactComponentGenerator.verboseStoriesComments": false,
+  "reactComponentGenerator.stylesLanguage": "module.scss",
+  "reactComponentGenerator.createStoriesFile": false,
+  "reactComponentGenerator.importReact": false
+}

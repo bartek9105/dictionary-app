@@ -1,0 +1,24 @@
+@use "../../../../colors.scss" as *;
+
+.list {
+  display: grid;
+  row-gap: 13px;
+  padding-left: 16px;
+  li::marker {
+    color: $color-purple;
+  }
+}
+
+.listItem {
+  display: grid;
+  row-gap: 13px;
+  font-size: 15px;
+  line-height: 24px;
+  color: $color-carbon-fiber;
+}
+
+.definitionExample {
+  font-size: 15px;
+  line-height: 24px;
+  color: $color-sonic-silver;
+}
