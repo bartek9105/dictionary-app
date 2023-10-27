@@ -7,6 +7,7 @@ type SourceUrlsListProps = Required<Pick<WordDefinitionResponse, "sourceUrls">>;
 
 export const SourceUrlsList = ({ sourceUrls }: SourceUrlsListProps) => (
   <List
+    className={styles.list}
     headerComponent={
       <Typography.Body size="s" className={styles.hint}>
         Source

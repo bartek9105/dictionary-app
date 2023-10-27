@@ -22,7 +22,7 @@ export const useGetDebouncedWordDefinition = () => {
 
     const timeout = setTimeout(() => {
       getData();
-    }, 300);
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, [searchTerm]);

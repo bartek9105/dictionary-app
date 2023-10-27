@@ -27,18 +27,24 @@ export const HomePage = () => {
               word={wordDefinition.word}
               phonetic={wordDefinition.phonetic}
             />
-            <div className={styles.meanings}>
-              {wordDefinition.meanings.map((meaning) => (
-                <div>
-                  <PartOfSpeechHint partOfSpeech={meaning.partOfSpeech} />
-                  <DefinitionsList definitions={meaning.definitions} />
-                  {!!meaning.synonyms.length && (
-                    <SynonymsList synonyms={meaning.synonyms} />
-                  )}
-                </div>
-              ))}
+            <div className={styles.content}>
+              {wordDefinition.meanings.map(
+                ({ partOfSpeech, definitions, synonyms }) => (
+                  <div>
+                    <PartOfSpeechHint partOfSpeech={partOfSpeech} />
+                    <DefinitionsList definitions={definitions} />
+                    {!!synonyms.length && (
+                      <div className={styles.synonymsList}>
+                        <SynonymsList synonyms={synonyms} />
+                      </div>
+                    )}
+                  </div>
+                )
+              )}
             </div>
-            <Line />
+            <div className={styles.line}>
+              <Line />
+            </div>
             {wordDefinition.sourceUrls && (
               <SourceUrlsList sourceUrls={wordDefinition.sourceUrls} />
             )}

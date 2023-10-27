@@ -14,3 +14,9 @@
   color: $color-carbon-fiber;
   text-decoration: underline;
 }
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,4 +1,5 @@
 import { List } from "../../../../components/List/List";
+import Typography from "../../../../components/Typography/Typography";
 import { Meaning } from "../../../../models/word-definition.model";
 import styles from "./DefinitionsList.module.scss";
 
@@ -6,7 +7,12 @@ type DefinitionsListProps = Pick<Meaning, "definitions">;
 
 export const DefinitionsList = ({ definitions }: DefinitionsListProps) => (
   <List
-    headerComponent={<span className={styles.hint}>Meaning</span>}
+    className={styles.list}
+    headerComponent={
+      <Typography.Body size="s" className={styles.hint}>
+        Meaning
+      </Typography.Body>
+    }
     items={definitions}
     renderItem={({ definition, example }) => (
       <span className={styles.listItem}>
