@@ -6,11 +6,18 @@ export const useGetDebouncedWordDefinition = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [wordDefinition, setWordDefinition] =
     useState<WordDefinitionResponse>();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
-      const wordDefinition = await getWordDefinition(searchTerm);
-      setWordDefinition(wordDefinition);
+      try {
+        setIsLoading(true);
+        const wordDefinition = await getWordDefinition(searchTerm);
+        setWordDefinition(wordDefinition);
+      } catch {
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     const timeout = setTimeout(() => {
@@ -21,6 +28,7 @@ export const useGetDebouncedWordDefinition = () => {
   }, [searchTerm]);
 
   return {
+    isLoading,
     wordDefinition,
     setSearchTerm,
   };
