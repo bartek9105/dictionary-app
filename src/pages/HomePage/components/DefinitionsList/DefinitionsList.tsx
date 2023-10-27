@@ -4,19 +4,15 @@ import styles from "./DefinitionsList.module.scss";
 
 type DefinitionsListProps = Pick<Meaning, "definitions">;
 
-export const DefinitionsList = ({ definitions }: DefinitionsListProps) => {
-  return (
-    <List
-      headerComponent={<span className={styles.hint}>Meaning</span>}
-      items={definitions}
-      renderItem={({ definition, example }) => (
-        <span className={styles.listItem}>
-          {definition}
-          {example && (
-            <div className={styles.definitionExample}>"{example}"</div>
-          )}
-        </span>
-      )}
-    />
-  );
-};
+export const DefinitionsList = ({ definitions }: DefinitionsListProps) => (
+  <List
+    headerComponent={<span className={styles.hint}>Meaning</span>}
+    items={definitions}
+    renderItem={({ definition, example }) => (
+      <span className={styles.listItem}>
+        {definition}
+        {example && <div className={styles.definitionExample}>"{example}"</div>}
+      </span>
+    )}
+  />
+);

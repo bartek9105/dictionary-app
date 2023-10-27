@@ -5,13 +5,11 @@ import styles from "./PartOfSpeechHint.module.scss";
 
 type PartOfSpeechHintProps = Pick<Meaning, "partOfSpeech">;
 
-export const PartOfSpeechHint = ({ partOfSpeech }: PartOfSpeechHintProps) => {
-  return (
-    <div className={styles.container}>
-      <Typography.Body size="m" className={styles.hint}>
-        {partOfSpeech}
-      </Typography.Body>
-      <Line />
-    </div>
-  );
-};
+export const PartOfSpeechHint = ({ partOfSpeech }: PartOfSpeechHintProps) => (
+  <div className={styles.container}>
+    <Typography.Body size="m" className={styles.hint}>
+      {partOfSpeech}
+    </Typography.Body>
+    <Line />
+  </div>
+);
