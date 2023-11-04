@@ -3,7 +3,7 @@ import { getWordDefinition } from "../api/dictionary/api";
 import { WordDefinitionResponse } from "../models/word-definition.model";
 
 export const useGetDebouncedWordDefinition = () => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("keyboard");
   const [wordDefinition, setWordDefinition] =
     useState<WordDefinitionResponse>();
   const [isLoading, setIsLoading] = useState(false);

@@ -1,0 +1,53 @@
+@use "../../colors.scss" as *;
+
+.container {
+  position: relative;
+  width: max-content;
+}
+
+.button {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  min-width: 183px;
+  display: grid;
+  row-gap: 16px;
+  background-color: $color-white;
+  list-style: none;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: max-content;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.dropdownItem {
+  cursor: pointer;
+}
+
+.optionText,
+.buttonText {
+  color: $color-carbon-fiber;
+  font-weight: 700;
+}
+
+.optionText {
+  transition: all 0.2s;
+  &:hover {
+    color: $color-purple !important;
+  }
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: $color-purple;
+}
