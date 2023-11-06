@@ -1,7 +1,15 @@
 @use "../../colors.scss" as *;
 
 .line {
+  background-color: var(--color-snowbank);
+}
+
+.lineHorizontal {
   width: 100%;
   height: 1px;
-  background-color: var(--color-snowbank);
+}
+
+.lineVertical {
+  width: 1px;
+  height: 32px;
 }

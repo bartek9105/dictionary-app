@@ -7,11 +7,18 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   border: 0;
   background: 0;
   cursor: pointer;
   padding: 0;
   margin: 0;
+}
+
+.chevronIcon {
+  color: $color-purple;
 }
 
 .dropdown {

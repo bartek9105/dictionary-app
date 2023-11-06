@@ -16,8 +16,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  li::after:not(:last-child) {
+  li:not(:last-child)::after {
     content: ", ";
+    color: $color-purple;
   }
 }
 

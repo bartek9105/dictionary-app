@@ -1,24 +1,11 @@
 import { useDarkMode } from "../../hooks/useDarkMode";
-import { FontType, useFontFamily } from "../../hooks/useFontFamily";
+import { useFontFamily } from "../../hooks/useFontFamily";
 import { ReactComponent as BookIcon } from "../../icons/book.svg";
 import { DarkModeToggle } from "../DarkModeToggle/DarkModeToggle";
+import { Line } from "../Line/Line";
 import { Select } from "../Select/Select";
+import { DROPDOWN_FONTS_OPTIONS } from "./Navbar.const";
 import styles from "./Navbar.module.scss";
-
-const fontsOptions = [
-  {
-    displayName: "Monospace",
-    value: FontType.MONOSPACE,
-  },
-  {
-    displayName: "Sans Serif",
-    value: FontType.SANS_SERIF,
-  },
-  {
-    displayName: "Serif",
-    value: FontType.SERIF,
-  },
-];
 
 export const Navbar = () => {
   const { activeFontType, setFontType } = useFontFamily();
@@ -30,9 +17,10 @@ export const Navbar = () => {
       <div className={styles.rightSide}>
         <Select
           value={activeFontType}
-          options={fontsOptions}
+          options={DROPDOWN_FONTS_OPTIONS}
           onChange={(value) => setFontType(value)}
         />
+        <Line type="vertical" />
         <DarkModeToggle
           isDarkMode={activeTheme === "dark"}
           onClick={toggleTheme}

@@ -48,8 +48,8 @@ export const Select = <T extends {}>({
           <Typography.Body size="m" className={styles.buttonText}>
             {selectedOption?.displayName}
           </Typography.Body>
+          <ChevronDrownIcon className={styles.chevronIcon} />
         </button>
-        <ChevronDrownIcon />
       </div>
       {isExpanded && (
         <ul className={styles.dropdown}>
