@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 
 const FONT_TYPE_LOCAL_STORAGE_KEY = "font";
+const savedFontType = localStorage.getItem(FONT_TYPE_LOCAL_STORAGE_KEY);
 
 export enum FontType {
   MONOSPACE = "monospace",
@@ -14,35 +15,25 @@ const FONT_TYPE_CLASSNAME_LOOKUP = {
   [FontType.SERIF]: "font-serif",
 };
 
-const savedFontType = localStorage.getItem(FONT_TYPE_LOCAL_STORAGE_KEY);
-
+const removeOtherFontClassNames = (fontType: FontType) =>
+  document.body.classList.remove(
+    ...Object.values(FONT_TYPE_CLASSNAME_LOOKUP).filter(
+      (key) => key !== fontType
+    )
+  );
 const changeFontFamilyClassName = (fontType: FontType) => {
-  document.body.className = "";
-
-  if (fontType === FontType.MONOSPACE) {
-    document.body.classList.add(FONT_TYPE_CLASSNAME_LOOKUP[FontType.MONOSPACE]);
-  }
-  if (fontType === FontType.SANS_SERIF) {
-    document.body.classList.add(
-      FONT_TYPE_CLASSNAME_LOOKUP[FontType.SANS_SERIF]
-    );
-  }
-  if (fontType === FontType.SERIF) {
-    document.body.classList.add(FONT_TYPE_CLASSNAME_LOOKUP[FontType.SERIF]);
-  }
+  removeOtherFontClassNames(fontType);
+  document.body.classList.add(FONT_TYPE_CLASSNAME_LOOKUP[fontType]);
 };
 
 export const useFontFamily = () => {
   const [activeFontType, setActiveFontType] = useState<FontType>(
-    FontType.SANS_SERIF
+    savedFontType ? (savedFontType as FontType) : FontType.SANS_SERIF
   );
 
   useLayoutEffect(() => {
-    if (savedFontType) {
-      changeFontFamilyClassName(savedFontType as FontType);
-      setActiveFontType(savedFontType as FontType);
-    }
-  }, []);
+    changeFontFamilyClassName(activeFontType);
+  }, [activeFontType]);
 
   const setFontType = (fontType: FontType) => {
     changeFontFamilyClassName(fontType);

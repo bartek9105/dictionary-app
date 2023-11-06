@@ -42,7 +42,10 @@ export const HomePage = () => {
                     <DefinitionsList definitions={definitions} />
                     {!!synonyms.length && (
                       <div className={styles.synonymsList}>
-                        <SynonymsList synonyms={synonyms} />
+                        <SynonymsList
+                          synonyms={synonyms}
+                          onClick={(synonym) => setSearchTerm(synonym)}
+                        />
                       </div>
                     )}
                   </div>

@@ -3,9 +3,11 @@ import Typography from "../../../../components/Typography/Typography";
 import { Meaning } from "../../../../models/word-definition.model";
 import styles from "./SynonymsList.module.scss";
 
-type SynonymsListProps = Pick<Meaning, "synonyms">;
+type SynonymsListProps = Pick<Meaning, "synonyms"> & {
+  onClick: (synonym: string) => void;
+};
 
-export const SynonymsList = ({ synonyms }: SynonymsListProps) => (
+export const SynonymsList = ({ synonyms, onClick }: SynonymsListProps) => (
   <List
     className={styles.synonymsList}
     headerComponent={
@@ -15,7 +17,9 @@ export const SynonymsList = ({ synonyms }: SynonymsListProps) => (
     }
     items={synonyms}
     renderItem={(synonym) => (
-      <span className={styles.synonymItem}>{synonym}</span>
+      <span className={styles.synonymItem} onClick={() => onClick(synonym)}>
+        {synonym}
+      </span>
     )}
   />
 );

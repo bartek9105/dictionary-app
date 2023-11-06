@@ -1,0 +1,17 @@
+@use "../../colors.scss" as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.moonIcon {
+  width: 20px;
+  height: 20px;
+  color: $color-sonic-silver;
+}
+
+.moonIconDarkMode {
+  color: $color-purple;
+}

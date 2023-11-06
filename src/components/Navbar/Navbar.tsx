@@ -1,5 +1,7 @@
+import { useDarkMode } from "../../hooks/useDarkMode";
 import { FontType, useFontFamily } from "../../hooks/useFontFamily";
 import { ReactComponent as BookIcon } from "../../icons/book.svg";
+import { DarkModeToggle } from "../DarkModeToggle/DarkModeToggle";
 import { Select } from "../Select/Select";
 import styles from "./Navbar.module.scss";
 
@@ -20,15 +22,22 @@ const fontsOptions = [
 
 export const Navbar = () => {
   const { activeFontType, setFontType } = useFontFamily();
+  const { toggleTheme, activeTheme } = useDarkMode();
 
   return (
     <nav className={styles.container}>
       <BookIcon className={styles.bookIcon} />
-      <Select
-        value={activeFontType}
-        options={fontsOptions}
-        onChange={(value) => setFontType(value)}
-      />
+      <div className={styles.rightSide}>
+        <Select
+          value={activeFontType}
+          options={fontsOptions}
+          onChange={(value) => setFontType(value)}
+        />
+        <DarkModeToggle
+          isDarkMode={activeTheme === "dark"}
+          onClick={toggleTheme}
+        />
+      </div>
     </nav>
   );
 };

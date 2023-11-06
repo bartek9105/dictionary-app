@@ -3,6 +3,7 @@
 .container {
   position: relative;
   width: max-content;
+  z-index: 1;
 }
 
 .button {
@@ -17,13 +18,13 @@
   min-width: 183px;
   display: grid;
   row-gap: 16px;
-  background-color: $color-white;
+  background-color: var(--background-color);
   list-style: none;
   position: absolute;
   top: 32px;
   right: 0;
   width: max-content;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 30px 0px var(--shadow-color);
   padding: 24px;
   border-radius: 16px;
 }
@@ -34,7 +35,7 @@
 
 .optionText,
 .buttonText {
-  color: $color-carbon-fiber;
+  color: var(--color-carbon-fiber);
   font-weight: 700;
 }
 
