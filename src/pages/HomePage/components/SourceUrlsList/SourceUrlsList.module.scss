@@ -11,8 +11,15 @@
 }
 
 .link {
+  text-decoration: underline;
+}
+
+.linkText {
   color: var(--color-carbon-fiber);
   text-decoration: underline;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
 }
 
 .list {

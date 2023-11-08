@@ -22,6 +22,7 @@ export const Navbar = () => {
         />
         <Line type="vertical" />
         <DarkModeToggle
+          checked={activeTheme === "dark"}
           isDarkMode={activeTheme === "dark"}
           onClick={toggleTheme}
         />

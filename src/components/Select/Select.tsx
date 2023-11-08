@@ -45,9 +45,9 @@ export const Select = <T extends {}>({
           onClick={() => setIsExpanded(!isExpanded)}
           className={styles.button}
         >
-          <Typography.Body size="m" className={styles.buttonText}>
+          <span className={styles.buttonText}>
             {selectedOption?.displayName}
-          </Typography.Body>
+          </span>
           <ChevronDrownIcon className={styles.chevronIcon} />
         </button>
       </div>

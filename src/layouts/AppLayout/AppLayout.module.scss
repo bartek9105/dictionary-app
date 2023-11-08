@@ -1,5 +1,10 @@
+@use "../../breakpoints.scss" as *;
+
 .container {
   max-width: 327px;
   margin: 0 auto;
-  padding-bottom: 48px;
+  padding-bottom: 85px;
+  @include for-tablet-up {
+    max-width: 689px;
+  }
 }

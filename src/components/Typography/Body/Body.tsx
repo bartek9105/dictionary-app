@@ -10,13 +10,10 @@ export type BodyProps = PropsWithChildren<{
 export const Body = ({ children, size, className }: BodyProps) => {
   return (
     <p
-      className={
-        (cn({
-          [styles.bodySizeS]: size === "s",
-          [styles.bodySizeM]: size === "m",
-        }),
-        className)
-      }
+      className={cn(className, {
+        [styles.bodySizeS]: size === "s",
+        [styles.bodySizeM]: size === "m",
+      })}
     >
       {children}
     </p>
